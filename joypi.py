@@ -36,8 +36,33 @@ while done==False:
         joystick = pygame.joystick.Joystick(i)
         joystick.init()
     
-    #Start Writing Yout Code From Here   
-    if (joystick.get_axis(1) < -0.5): #Forward
+    #Start Writing Yout Code From Here
+    
+    if   (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
+         print "FL"
+         GPIO.output(11, False)
+         GPIO.output(12, False)
+         GPIO.output(16, True)
+         GPIO.output(15, False)
+    elif (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) > 0.5): #Forward_Right
+         print "FR"
+         GPIO.output(11, True)
+         GPIO.output(12, False)
+         GPIO.output(16, False)
+         GPIO.output(15, False)
+    elif (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) < -0.5): #Backward_Left
+         print "BL"
+         GPIO.output(11, False)
+         GPIO.output(12, True)
+         GPIO.output(16, False)
+         GPIO.output(15, False)
+    elif (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) > 0.5): #Backward_Right
+         print "BR"
+         GPIO.output(11, False)
+         GPIO.output(12, False)
+         GPIO.output(16, False)
+         GPIO.output(15, True)
+    elif (joystick.get_axis(1) < -0.5): #Forward
          print "F"
          GPIO.output(11, True)
          GPIO.output(12, False)
