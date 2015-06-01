@@ -39,8 +39,8 @@ while done==False:
            
  
     joystick_count = pygame.joystick.get_count() #Get Joystick Count
-    if joystick_count is None
-      GPIO.output(18, False) #Status-LED-Off
+     if joystick_count == 0:
+        GPIO.output(18, False) #Status-LED-Off
      
     # For each joystick:
     for i in range(joystick_count):
