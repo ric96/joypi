@@ -9,7 +9,7 @@ GPIO.setup(11, GPIO.OUT) #input-1
 GPIO.setup(12, GPIO.OUT) #input-2
 GPIO.setup(15, GPIO.OUT) #input-3
 GPIO.setup(16, GPIO.OUT) #input-4
-GPIO.setup(3, GPIO.OUT)  #Status-LED
+GPIO.setup(18, GPIO.OUT)  #Status-LED
   
 pygame.init()
  
@@ -17,9 +17,9 @@ done = False
 # Initialize the joysticks
 pygame.joystick.init()
     
-GPIO.output(3, True) #Status-LED-On
+GPIO.output(18, True) #Status-LED-On
 def sigint_handler(signum, frame): #Catching Ctrl+c
-    GPIO.output(3, False) #Status-LED-Off
+    GPIO.output(18, False) #Status-LED-Off
     pygame.quit()
     sys.exit(0)
 signal.signal(signal.SIGINT, sigint_handler)
@@ -28,6 +28,7 @@ while done==False:
     # EVENT PROCESSING STEP
     for event in pygame.event.get(): # User did something
         if event.type == pygame.QUIT: # If user clicked close
+            GPIO.output(18, False) #Status-LED-Off
             done=True # Flag that we are done so we exit this loop
         
         # Possible joystick actions: JOYAXISMOTION JOYBALLMOTION JOYBUTTONDOWN JOYBUTTONUP JOYHATMOTION
@@ -38,6 +39,8 @@ while done==False:
            
  
     joystick_count = pygame.joystick.get_count() #Get Joystick Count
+    if joystick_count == 0
+      GPIO.output(18, False) #Status-LED-Off
      
     # For each joystick:
     for i in range(joystick_count):
