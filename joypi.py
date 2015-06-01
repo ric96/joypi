@@ -18,7 +18,7 @@ pygame.joystick.init()
     
 GPIO.output(3, True) #Status-LED-On
 def sigint_handler(signum, frame):
-    GPIO.output(3, False)'
+    GPIO.output(3, False)
  
 signal.signal(signal.SIGINT, sigint_handler)
 # -------- Main Program Loop -----------
