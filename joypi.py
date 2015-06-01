@@ -7,6 +7,7 @@ GPIO.setup(11, GPIO.OUT) #input-1
 GPIO.setup(12, GPIO.OUT) #input-2
 GPIO.setup(15, GPIO.OUT) #input-3
 GPIO.setup(16, GPIO.OUT) #input-4
+GPIO.setup(3, GPIO.OUT)  #Status-LED
   
 pygame.init()
  
@@ -14,7 +15,7 @@ done = False
 # Initialize the joysticks
 pygame.joystick.init()
     
-
+GPIO.output(3, True) #Status-LED-On
 # -------- Main Program Loop -----------
 while done==False:
     # EVENT PROCESSING STEP
@@ -100,4 +101,5 @@ while done==False:
 # Use Ctrl+C to quit.
 # If you forget this line, the program will 'hang'
 # on exit if running from IDLE.
+GPIO.output(3, False) #Satus-LED-Off
 pygame.quit ()
