@@ -1,6 +1,7 @@
 import time
 import signal
 import pygame
+import sys
 import RPi.GPIO as GPIO
 # The following is an example code written to controll the l298n motor contoller
 GPIO.setmode(GPIO.BOARD)
@@ -17,9 +18,10 @@ done = False
 pygame.joystick.init()
     
 GPIO.output(3, True) #Status-LED-On
-def sigint_handler(signum, frame):
-    GPIO.output(3, False)
- 
+def sigint_handler(signum, frame): #Catching Ctrl+c
+    GPIO.output(3, False) #Status-LED-Off
+    pygame.quit()
+    sys.exit(0)
 signal.signal(signal.SIGINT, sigint_handler)
 # -------- Main Program Loop -----------
 while done==False:
@@ -108,4 +110,3 @@ while done==False:
 # on exit if running from IDLE.
 
 pygame.quit ()
-GPIO.output(3, False) #Satus-LED-Off
