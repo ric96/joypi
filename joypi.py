@@ -101,5 +101,6 @@ while done==False:
 # Use Ctrl+C to quit.
 # If you forget this line, the program will 'hang'
 # on exit if running from IDLE.
-GPIO.output(3, False) #Satus-LED-Off
+
 pygame.quit ()
+GPIO.output(3, False) #Satus-LED-Off
