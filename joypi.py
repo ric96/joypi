@@ -1,4 +1,5 @@
 import time
+import signal
 import pygame
 import RPi.GPIO as GPIO
 # The following is an example code written to controll the l298n motor contoller
@@ -16,6 +17,10 @@ done = False
 pygame.joystick.init()
     
 GPIO.output(3, True) #Status-LED-On
+def sigint_handler(signum, frame):
+    GPIO.output(3, False)'
+ 
+signal.signal(signal.SIGINT, sigint_handler)
 # -------- Main Program Loop -----------
 while done==False:
     # EVENT PROCESSING STEP
