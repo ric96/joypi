@@ -2,6 +2,7 @@ import time
 import signal
 import pygame
 import sys
+import os
 import RPi.GPIO as GPIO
 # The following is an example code written to controll the l298n motor contoller
 GPIO.setmode(GPIO.BOARD)
@@ -13,6 +14,7 @@ GPIO.setup(24, GPIO.IN) #Back Center
 GPIO.setup(26, GPIO.IN) #Back Right
 
 while True:
+  os.system('clear')
   fl = GPIO.input(7)
   print fl
   fc = GPIO.input(8)
