@@ -25,4 +25,5 @@ while True:
   print bc
   br = GPIO.input(26)
   print br
+  time.sleep(1)
   
