@@ -23,7 +23,7 @@ done = False
 # Initialize the joysticks
 pygame.joystick.init()
 
-# ############### Movement Definitions BEGIN #######################
+################ Movement Definitions BEGIN #######################
 def forward_left()
     print "FL"
     GPIO.output(11, False)
@@ -86,7 +86,7 @@ def nutral()
     GPIO.output(12, False)
     GPIO.output(16, False)
     GPIO.output(15, False)
-# ######################### Movement Definitions END ########################
+########################## Movement Definitions END ########################
 
 GPIO.output(18, True) #Status-LED-On
 def sigint_handler(signum, frame): #Catching Ctrl+c
