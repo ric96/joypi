@@ -22,7 +22,73 @@ pygame.init()
 done = False
 # Initialize the joysticks
 pygame.joystick.init()
-    
+
+################ Movement Definitions BEGIN #######################
+def forward_left()
+    print "FL"
+    GPIO.output(11, False)
+    GPIO.output(12, False)
+    GPIO.output(16, True)
+    GPIO.output(15, False)
+
+def forward_right()
+    print "FR"
+    GPIO.output(11, True)
+    GPIO.output(12, False)
+    GPIO.output(16, False)
+    GPIO.output(15, False)
+ 
+def backward_left()
+    print "BL"
+    GPIO.output(11, False)
+    GPIO.output(12, False)
+    GPIO.output(16, False)
+    GPIO.output(15, True)
+
+def backward_right()
+    print "BR"
+    GPIO.output(11, False)
+    GPIO.output(12, True)
+    GPIO.output(16, False)
+    GPIO.output(15, False)
+   
+def forward()
+    print "F"
+    GPIO.output(11, True)
+    GPIO.output(12, False)
+    GPIO.output(16, True)
+    GPIO.output(15, False)
+
+def backward()
+    print "B"
+    GPIO.output(11, False)
+    GPIO.output(12, True)
+    GPIO.output(16, False)
+    GPIO.output(15, True)
+
+def left()
+    print "L"
+    GPIO.output(11, False)
+    GPIO.output(12, True)
+    GPIO.output(16, True)
+    GPIO.output(15, False)
+
+def right()
+    print "R"
+    GPIO.output(11, True)
+    GPIO.output(12, False)
+    GPIO.output(16, False)
+    GPIO.output(15, True)
+
+def nutral()
+    print "N"
+    GPIO.output(11, False)
+    GPIO.output(12, False)
+    GPIO.output(16, False)
+    GPIO.output(15, False)
+
+########################## Movement Definitions END ########################
+
 GPIO.output(18, True) #Status-LED-On
 def sigint_handler(signum, frame): #Catching Ctrl+c
     GPIO.output(18, False) #Status-LED-Off
@@ -56,59 +122,31 @@ while done==False:
     #Start Writing Yout Code From Here
     
     if   (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
-         print "FL"
-         GPIO.output(11, False)
-         GPIO.output(12, False)
-         GPIO.output(16, True)
-         GPIO.output(15, False)
+         forward_left()
+         
     elif (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) > 0.5): #Forward_Right
-         print "FR"
-         GPIO.output(11, True)
-         GPIO.output(12, False)
-         GPIO.output(16, False)
-         GPIO.output(15, False)
+         forward_right()
+
     elif (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) < -0.5): #Backward_Left
-         print "BL"
-         GPIO.output(11, False)
-         GPIO.output(12, False)
-         GPIO.output(16, False)
-         GPIO.output(15, True)
+         backward_left()
+
     elif (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) > 0.5): #Backward_Right
-         print "BR"
-         GPIO.output(11, False)
-         GPIO.output(12, True)
-         GPIO.output(16, False)
-         GPIO.output(15, False)
+         backward_right()
+         
     elif (joystick.get_axis(1) < -0.5): #Forward
-         print "F"
-         GPIO.output(11, True)
-         GPIO.output(12, False)
-         GPIO.output(16, True)
-         GPIO.output(15, False)
+         forward()
+         
     elif (joystick.get_axis(1) > 0.5): #backward
-         print "B"
-         GPIO.output(11, False)
-         GPIO.output(12, True)
-         GPIO.output(16, False)
-         GPIO.output(15, True)
+         backward()
+         
     elif (joystick.get_axis(0) < -0.5): #Left
-         print "L"
-         GPIO.output(11, False)
-         GPIO.output(12, True)
-         GPIO.output(16, True)
-         GPIO.output(15, False)
+         left()
+         
     elif (joystick.get_axis(0) > 0.5): #Right
-         print "R"
-         GPIO.output(11, True)
-         GPIO.output(12, False)
-         GPIO.output(16, False)
-         GPIO.output(15, True)
+         right()
+         
     else:
-         print "N"
-         GPIO.output(11, False)
-         GPIO.output(12, False)
-         GPIO.output(16, False)
-         GPIO.output(15, False)
+         nutral()
    
 
     time.sleep(0.2)  #refresh rate 
