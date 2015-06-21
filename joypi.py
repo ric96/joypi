@@ -9,6 +9,12 @@ GPIO.setup(11, GPIO.OUT) #input-1
 GPIO.setup(12, GPIO.OUT) #input-2
 GPIO.setup(15, GPIO.OUT) #input-3
 GPIO.setup(16, GPIO.OUT) #input-4
+GPIO.setup(7, GPIO.IN) #Front Left
+GPIO.setup(8, GPIO.IN) #Front Center
+GPIO.setup(10, GPIO.IN) #Front Right
+GPIO.setup(23, GPIO.IN) #Back Left
+GPIO.setup(24, GPIO.IN) #Back Center
+GPIO.setup(26, GPIO.IN) #Back Right
 GPIO.setup(18, GPIO.OUT)  #Status-LED
   
 pygame.init()
