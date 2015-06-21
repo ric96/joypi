@@ -143,8 +143,11 @@ while done==False:
           else:
                nutral()
 
+
        elif (fl == 1): #forward_left sensor blocked
-          if (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) > 0.5): #Forward_Right
+          if (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
+             nutral()
+          elif (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) > 0.5): #Forward_Right
              forward_right()
           elif (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) < -0.5): #Backward_Left
                backward_left()
@@ -160,8 +163,10 @@ while done==False:
                nutral()
 
        elif (fr == 1): #forward_right sensor blocked
-          if (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
-             forward_left()
+          if (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) > 0.5): #Forward_Right
+             nutral()
+          elif (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
+               forward_left()
           elif (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) < -0.5): #Backward_Left
                backward_left()
           elif (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) > 0.5): #Backward_Right
@@ -189,6 +194,7 @@ while done==False:
           else:
                nutral()
    
+
        elif (bl == 1):
             if (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
                forward_left()
@@ -240,6 +246,9 @@ while done==False:
                 right()
            else:
                 nutral()
+
+
+
     time.sleep(0.2)  #refresh rate 
     # ALL CODE SHOULD GO ABOVE THIS COMMENT
     
