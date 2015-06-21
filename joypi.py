@@ -131,9 +131,11 @@ while done==False:
     else:
        if (fc == 1): #forward_sensor blocked
           if (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) < -0.5): #Backward_Left
-               backward_left()
+             backward_left()
           elif (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) > 0.5): #Backward_Right
                backward_right()
+          elif (joystick.get_axis(1) < -0.5): #Forward
+               nutral()          
           elif (joystick.get_axis(1) > 0.5): #backward
                backward()
           elif (joystick.get_axis(0) < -0.5): #Left
@@ -142,7 +144,23 @@ while done==False:
                right()
           else:
                nutral()
-
+       
+       elif (bc == 1):
+          
+          if (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
+               forward_left()
+          elif (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) > 0.5): #Forward_Right
+               forward_right()
+          elif (joystick.get_axis(1) < -0.5): #Forward
+               forward()
+          elif (joystick.get_axis(1) > 0.5): #backward
+             nutral()
+          elif (joystick.get_axis(0) < -0.5): #Left
+               left()
+          elif (joystick.get_axis(0) > 0.5): #Right
+               right()
+          else:
+               nutral()
 
        elif (fl == 1): #forward_left sensor blocked
           if (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
@@ -180,24 +198,14 @@ while done==False:
           else:
                nutral()
 
-       if (bc == 1):
-          if   (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
-               forward_left()
-          elif (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) > 0.5): #Forward_Right
-               forward_right()
-          elif (joystick.get_axis(1) < -0.5): #Forward
-               forward()
-          elif (joystick.get_axis(0) < -0.5): #Left
-               left()
-          elif (joystick.get_axis(0) > 0.5): #Right
-               right()
-          else:
-               nutral()
+       
    
 
        elif (bl == 1):
-            if (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
-               forward_left()
+            if (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) < -0.5): #Backward_Left
+               nutral()
+            elif (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
+                 forward_left()
             elif (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) > 0.5): #Forward_Right
                  forward_right()
             elif (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) > 0.5): #Backward_Right
@@ -212,8 +220,10 @@ while done==False:
                  nutral()
 
        elif (br == 1):
-            if (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
-               forward_left()
+            if (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) > 0.5): #Backward_Right
+               nutral()
+            elif (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
+                 forward_left()
             elif (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) > 0.5): #Forward_Right
                  forward_right()
             elif (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) < -0.5): #Backward_Left
