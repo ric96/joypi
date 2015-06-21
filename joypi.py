@@ -171,6 +171,8 @@ while done==False:
                backward_left()
           elif (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) > 0.5): #Backward_Right
                backward_right()
+          elif (joystick.get_axis(1) < -0.5): #Forward
+               nutral()
           elif (joystick.get_axis(1) > 0.5): #backward
                backward()
           elif (joystick.get_axis(0) < -0.5): #Left
@@ -189,6 +191,8 @@ while done==False:
                backward_left()
           elif (joystick.get_axis(1) > 0.5 and joystick.get_axis(0) > 0.5): #Backward_Right
                backward_right()
+          elif (joystick.get_axis(1) < -0.5): #Forward
+               nutral()
           elif (joystick.get_axis(1) > 0.5): #backward
                backward()
           elif (joystick.get_axis(0) < -0.5): #Left
