@@ -126,7 +126,12 @@ while done==False:
     br = GPIO.input(26)
     #Start Writing Yout Code From Here
     if ((fc == 1 or fr == 1 or fl == 1) and (bc == 1 or br == 1 or bl == 1)):
-        nutral()
+       if (joystick.get_axis(0) < -0.5): #Left
+          left()
+       elif (joystick.get_axis(0) > 0.5): #Right
+            right()
+       else:
+         nutral()
     
     else:
        if (fc == 1): #forward_sensor blocked
