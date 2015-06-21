@@ -24,63 +24,63 @@ done = False
 pygame.joystick.init()
 
 ################ Movement Definitions BEGIN #######################
-def forward_left()
+def forward_left():
     print "FL"
     GPIO.output(11, False)
     GPIO.output(12, False)
     GPIO.output(16, True)
     GPIO.output(15, False)
 
-def forward_right()
+def forward_right():
     print "FR"
     GPIO.output(11, True)
     GPIO.output(12, False)
     GPIO.output(16, False)
     GPIO.output(15, False)
  
-def backward_left()
+def backward_left():
     print "BL"
     GPIO.output(11, False)
     GPIO.output(12, False)
     GPIO.output(16, False)
     GPIO.output(15, True)
 
-def backward_right()
+def backward_right():
     print "BR"
     GPIO.output(11, False)
     GPIO.output(12, True)
     GPIO.output(16, False)
     GPIO.output(15, False)
    
-def forward()
+def forward():
     print "F"
     GPIO.output(11, True)
     GPIO.output(12, False)
     GPIO.output(16, True)
     GPIO.output(15, False)
 
-def backward()
+def backward():
     print "B"
     GPIO.output(11, False)
     GPIO.output(12, True)
     GPIO.output(16, False)
     GPIO.output(15, True)
 
-def left()
+def left():
     print "L"
     GPIO.output(11, False)
     GPIO.output(12, True)
     GPIO.output(16, True)
     GPIO.output(15, False)
 
-def right()
+def right():
     print "R"
     GPIO.output(11, True)
     GPIO.output(12, False)
     GPIO.output(16, False)
     GPIO.output(15, True)
 
-def nutral()
+def nutral():
     print "N"
     GPIO.output(11, False)
     GPIO.output(12, False)
