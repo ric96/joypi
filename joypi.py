@@ -117,7 +117,13 @@ while done==False:
     for i in range(joystick_count):
         joystick = pygame.joystick.Joystick(i)
         joystick.init()
-    
+    #Sensor Input
+    fl = GPIO.input(7)
+    fc = GPIO.input(8)
+    fr = GPIO.input(10)
+    bl = GPIO.input(23)
+    bc = GPIO.input(24)
+    br = GPIO.input(26)
     #Start Writing Yout Code From Here
     
     if   (joystick.get_axis(1) < -0.5 and joystick.get_axis(0) < -0.5): #Forward_Left
