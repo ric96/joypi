@@ -268,7 +268,7 @@ while done==False:
 
 
 
-    time.sleep(0.2)  #refresh rate 
+    time.sleep(0.1)  #refresh rate 
     # ALL CODE SHOULD GO ABOVE THIS COMMENT
     
 # Use Ctrl+C to quit.
