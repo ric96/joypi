@@ -16,6 +16,7 @@ try:
             
             elif flag == 1:
               print "Stopping Stream"
+              call (["pkill nc"], shell=True)
               call (["pkill raspivid"], shell=True)
               flag = 0
             
