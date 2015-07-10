@@ -4,7 +4,7 @@ from time import sleep
 from subprocess import call
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(32, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-flag == 0
+flag = 0
 try:  
     while True:             
         if GPIO.input(32) != 1: # if port 25 == 1  
