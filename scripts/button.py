@@ -1,4 +1,5 @@
 import RPi.GPIO as GPIO
+import os
 from time import sleep
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(31, GPIO.IN, pull_up_down=GPIO.PUD_UP)
@@ -8,7 +9,8 @@ try:
     while True:            # this will carry on until you hit CTRL+C  
         if GPIO.input(31) != 1: # if port 25 == 1  
             sleep(0.5)
-            print "Port 31 is 1/HIGH/True - LED ON"  
+            print "Shutting down"  
+            os.system("halt")
             #GPIO.output(24, 1)         # set port/pin value to 1/HIGH/True  
         #else:  
          #   print "Port 32 is 0/LOW/False - LED OFF"  
