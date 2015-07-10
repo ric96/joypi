@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 from time import sleep
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(31, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-GPIO.setup(32, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(31, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(32, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 try:  
     while True:            # this will carry on until you hit CTRL+C  
