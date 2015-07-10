@@ -12,7 +12,7 @@ try:
         #else:  
          #   print "Port 32 is 0/LOW/False - LED OFF"  
             #GPIO.output(24, 0)         # set port/pin value to 0/LOW/False  
-        sleep(0.1)         # wait 0.1 seconds  
+        sleep(0.5)         # wait 0.1 seconds  
   
 finally:                   # this block will run no matter how the try block exits  
     GPIO.cleanup() 
