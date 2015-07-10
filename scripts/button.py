@@ -14,7 +14,7 @@ try:
               os.system("raspivid -n -t 0 -w 1280 -h 720 -hf -ih -fps 20 -o - | nc -k -l 2222")
               flag = 1
             
-            else if flag == 1:
+            elif flag == 1:
               print "Stopping Stream"
               call (["pkill raspivid"], shell=True)
               flag = 0
