@@ -16,8 +16,8 @@ try:
             
             elif flag == 1:
               print "Stopping Stream"
-              call (["pkill nc"], shell=True)
               call (["pkill raspivid"], shell=True)
+              call (["pkill nc"], shell=True)
               flag = 0
             
         sleep(0.05)         # wait 0.1 seconds  
