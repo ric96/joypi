@@ -11,8 +11,8 @@ try:
             sleep(0.5)
             if flag == 0:
               print "Sending Stream"  
-              call (["DATE=$(date +"%Y-%m-%d_%H%M")"], shell=True)
-              os.system("raspivid -md 2 -vf -hf -o /media/DEVICE/$DATE.h264")
+              
+              os.system("raspivid -md 2 -vf -hf -o /media/DEVICE/$(date +'%Y-%m-%d_%H%M').h264")
               flag = 1
             
             elif flag == 1:
