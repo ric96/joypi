@@ -12,12 +12,13 @@ try:
             if flag == 0:
               print "Sending Stream"  
               
-              os.system("raspivid -n -t 0 -md 2 -vf -hf -o /media/DEVICE/$(date +'%Y-%m-%d_%H%M%S').h264")
+              os.system("raspivid -n -t 0 -md 2 -vf -hf -o /media/DEVICE/$(date +'%Y-%m-%d_%H%M%S').h264 &")
               flag = 1
             
             elif flag == 1:
               print "Stopping Stream"
               call (["pkill raspivid"], shell=True)
+              os.system("sync")
               flag = 0
             
         sleep(0.05)         # wait 0.1 seconds  
