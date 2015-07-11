@@ -12,7 +12,7 @@ try:
             if flag == 0:
               print "Sending Stream"  
               
-              os.system("raspivid -md 2 -vf -hf -o /media/DEVICE/$(date +'%Y-%m-%d_%H%M').h264")
+              os.system("raspivid -md 2 -vf -hf -o /media/DEVICE/$(date +'%Y-%m-%d_%H%M%S').h264")
               flag = 1
             
             elif flag == 1:
